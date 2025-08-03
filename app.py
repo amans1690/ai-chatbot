@@ -33,8 +33,18 @@ def chat():
             contents=user_message
         )
         
-        # Extract the response text
-        bot_response = response.text if hasattr(response, 'text') else str(response)
+        # Extract the response text - handle different response formats
+        if hasattr(response, 'text'):
+            bot_response = response.text
+        elif hasattr(response, 'candidates') and response.candidates:
+            bot_response = response.candidates[0].content.parts[0].text
+        else:
+            bot_response = str(response)
+        
+        # Debug: Print response structure for troubleshooting
+        print(f"Response type: {type(response)}")
+        print(f"Response attributes: {dir(response)}")
+        print(f"Bot response: {bot_response[:200]}...")
         
         return jsonify({
             'response': bot_response,
@@ -52,15 +62,15 @@ def chat():
 def health_check():
     return jsonify({'status': 'healthy', 'service': 'chatbot-api'})
 
-if __name__ == '__main__':
-    # Check if GEMINI_API_KEY is set
-    if not os.getenv('GEMINI_API_KEY'):
-        print("Warning: GEMINI_API_KEY environment variable is not set!")
-        print("Please set your Gemini API key before running the server.")
-        print("You can set it by running: export GEMINI_API_KEY='your-api-key-here'")
-    
-    print("🚀 Starting Chatbot Server...")
-    print("📱 Frontend will be available at: http://localhost:5000")
-    print("🔧 API endpoint: http://localhost:5000/api/chat")
-    
-    app.run(debug=True, host='0.0.0.0', port=5000) 
+
+# Check if GEMINI_API_KEY is set
+if not os.getenv('GEMINI_API_KEY'):
+    print("Warning: GEMINI_API_KEY environment variable is not set!")
+    print("Please set your Gemini API key before running the server.")
+    print("You can set it by running: export GEMINI_API_KEY='your-api-key-here'")
+
+print("🚀 Starting Chatbot Server...")
+print("📱 Frontend will be available at: http://localhost:5000")
+print("🔧 API endpoint: http://localhost:5000/api/chat")
+
+app.run(debug=True, host='0.0.0.0', port=8080) 

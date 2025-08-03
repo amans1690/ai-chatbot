@@ -154,9 +154,16 @@ class ChatbotUI {
         const messageContent = document.createElement('div');
         messageContent.className = 'message-content';
         
-        const paragraph = document.createElement('p');
-        paragraph.textContent = content;
-        messageContent.appendChild(paragraph);
+        if (sender === 'bot') {
+            // Parse markdown for bot messages
+            const formattedContent = marked.parse(content);
+            messageContent.innerHTML = formattedContent;
+        } else {
+            // Keep user messages as plain text
+            const paragraph = document.createElement('p');
+            paragraph.textContent = content;
+            messageContent.appendChild(paragraph);
+        }
         
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(messageContent);

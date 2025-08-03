@@ -20,5 +20,5 @@ def start_chatbot():
         response = chat_with_openai(user_input)
         print(f"Bot: {response}\n")
 
-if __name__ == "__main__":
+if __name__ == "clibot":
     start_chatbot()

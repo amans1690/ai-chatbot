@@ -54,7 +54,7 @@ The chatbot features a beautiful gradient design with:
 
 5. **Open your browser** and go to:
    ```
-   http://localhost:5000
+   http://localhost:8080
    ```
 
 ## Project Structure
@@ -75,6 +75,12 @@ ai-chatbot/
 - `GET /` - Serves the main HTML page
 - `POST /api/chat` - Chat endpoint that calls Gemini API
 - `GET /api/health` - Health check endpoint
+
+## Features
+
+- **Markdown Support**: Bot responses are formatted with proper markdown rendering
+- **Rich Text**: Headers, lists, bold, italic, code blocks, and links are properly styled
+- **Responsive Design**: Works perfectly on desktop and mobile devices
 
 ## Usage
 
@@ -131,7 +137,7 @@ The server runs in debug mode by default. Check the terminal for detailed error 
 
 ### Testing
 
-- Test the API directly: `curl -X POST http://localhost:5000/api/chat -H "Content-Type: application/json" -d '{"message":"Hello"}'`
+- Test the API directly: `curl -X POST http://localhost:8080/api/chat -H "Content-Type: application/json" -d '{"message":"Hello"}'`
 - Check browser console for JavaScript errors
 - Monitor server logs in the terminal
 

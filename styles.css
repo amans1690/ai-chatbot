@@ -156,6 +156,104 @@ body {
     font-size: 15px;
 }
 
+/* Markdown formatting for bot messages */
+.bot-message .message-content {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.bot-message .message-content h1,
+.bot-message .message-content h2,
+.bot-message .message-content h3,
+.bot-message .message-content h4,
+.bot-message .message-content h5,
+.bot-message .message-content h6 {
+    margin: 16px 0 8px 0;
+    font-weight: 600;
+    color: inherit;
+}
+
+.bot-message .message-content h1 { font-size: 20px; }
+.bot-message .message-content h2 { font-size: 18px; }
+.bot-message .message-content h3 { font-size: 16px; }
+.bot-message .message-content h4 { font-size: 15px; }
+.bot-message .message-content h5 { font-size: 14px; }
+.bot-message .message-content h6 { font-size: 13px; }
+
+.bot-message .message-content p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.bot-message .message-content ul,
+.bot-message .message-content ol {
+    margin: 8px 0;
+    padding-left: 24px;
+}
+
+.bot-message .message-content li {
+    margin: 4px 0;
+    line-height: 1.6;
+}
+
+.bot-message .message-content strong,
+.bot-message .message-content b {
+    font-weight: 600;
+    color: inherit;
+}
+
+.bot-message .message-content em,
+.bot-message .message-content i {
+    font-style: italic;
+}
+
+.bot-message .message-content code {
+    background: rgba(102, 126, 234, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: #667eea;
+}
+
+.bot-message .message-content pre {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    overflow-x: auto;
+}
+
+.bot-message .message-content pre code {
+    background: none;
+    padding: 0;
+    color: inherit;
+}
+
+.bot-message .message-content blockquote {
+    border-left: 4px solid #667eea;
+    margin: 12px 0;
+    padding-left: 16px;
+    color: #64748b;
+    font-style: italic;
+}
+
+.bot-message .message-content hr {
+    border: none;
+    border-top: 1px solid #e2e8f0;
+    margin: 16px 0;
+}
+
+.bot-message .message-content a {
+    color: #667eea;
+    text-decoration: underline;
+}
+
+.bot-message .message-content a:hover {
+    text-decoration: none;
+}
+
 .chat-input-container {
     background: white;
     border-top: 1px solid #e2e8f0;

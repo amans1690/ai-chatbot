@@ -34,8 +34,8 @@ pip3 install -r requirements.txt
 
 # Start the server
 echo "🚀 Starting the chatbot server..."
-echo "📱 Frontend will be available at: http://localhost:5000"
-echo "🔧 API endpoint: http://localhost:5000/api/chat"
+echo "📱 Frontend will be available at: http://localhost:8080"
+echo "🔧 API endpoint: http://localhost:8080/api/chat"
 echo ""
 echo "Press Ctrl+C to stop the server"
 echo ""
